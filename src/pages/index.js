@@ -1,14 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import {
-  FaGlobeAfrica,
-  FaSearch,
-  FaAmazon,
-  FaCcAmazonPay,
-  FaEnvira,
-  FaDollarSign,
-  FaCarAlt,
-} from 'react-icons/fa';
+import { FaAmazon, FaDollarSign, FaCarAlt } from 'react-icons/fa';
 
 import { graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
@@ -32,10 +24,14 @@ import {
 } from '../components/reusableStyles/typography/Typography';
 
 import SliderContainer1 from '../components/reusableStyles/slider/SliderContainer1';
-import HerosCard1 from '../components/reusableStyles/cards/HerosCard1';
+
 import FeatureSection from '../components/features/FeatureSection';
 import { ButtonStyle1 } from '../components/reusableStyles/buttons/Button';
-import RenderAmazonProducts from '../hooks/apiHooks/RenderAmazonProducts';
+
+import AboutUs from '../components/home/AboutUs';
+import AboutOurFood from '../components/home/AboutOurFood';
+import Catering from '../components/home/Catering';
+import Contact from '../components/home/Contact';
 
 const HerosContainer = styled.div`
   z-index: -1;
@@ -47,34 +43,26 @@ const HerosContainer = styled.div`
   }
 `;
 
-const HerosCardContainer = styled.div`
-  margin-top: -20vh;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  justify-content: center;
-  align-items: flex-end;
-`;
-
 const HeroBackgroundImage = styled(BackgroundImage)`
   width: 100%;
-  height: 70vh;
+  height: 92vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.5)
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
   );
   background-size: cover;
   background-position: top;
-  align-items: center;
+  align-items: top;
   opacity: 1 !important;
 `;
 
 const HeroContentContainer = styled.div`
-  margin-top: 1rem;
-
-  flex-direction: column;
+  min-width: 30rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 const HeroContent = styled.div`
   color: ${props => props.theme.colors.white};
@@ -85,41 +73,19 @@ const HeroContent = styled.div`
   border-top-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
 `;
-const IconContainer = styled.div`
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const StyledIcon = styled(FaGlobeAfrica)`
-  font-size: 25rem;
-  opacity: 0.35;
-  color: ${props => props.theme.colors.white};
-`;
 
 const CustomH1 = styled(H1)`
   text-align: center;
   color: ${props => props.theme.colors.white};
   text-shadow: -3px 3px 0 ${props => props.theme.colors.black};
+  padding: 0.75rem 1rem;
+  background: ${props => props.theme.colors.blackTransparent};
 `;
 
 const CustomH2 = styled(H2CenteredLight2)`
   font-size: 3.2rem;
   color: ${props => props.theme.colors.primary};
   text-shadow: -3px 3px 0 rgba(10, 14, 39, 0.1);
-`;
-
-const Blurb = styled.p`
-  text-align: center;
-  font-weight: bolder;
-  & i {
-    text-decoration: underline;
-  }
-`;
-const Blurb2 = styled(Blurb)`
-  font-weight: 500;
-  margin-top: 1rem;
 `;
 
 const textVehicles = () => (
@@ -158,53 +124,10 @@ const textOurWarehouse1 = () => (
 
 export const query = graphql`
   {
-    heroImage: file(relativePath: { eq: "superstore/hero.jpg" }) {
+    heroImage: file(relativePath: { eq: "hero.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1000) {
           ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    slider1: file(relativePath: { eq: "superstore/slider1.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    slider2: file(relativePath: { eq: "superstore/slider2.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    slider3: file(relativePath: { eq: "superstore/slider3.png" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-
-    picture4: file(relativePath: { eq: "watch.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    picture5: file(relativePath: { eq: "tv.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_noBase64
-        }
-      }
-    }
-    picture6: file(relativePath: { eq: "apple-iphone-1.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
@@ -255,50 +178,24 @@ const Home = ({ data }) => {
         <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
           <HeroContentContainer>
             <HeroContent>
-              <CustomH1>The Amazon Store For Africa</CustomH1>
-              <Blurb>
-                We will deliver to <i>any</i> African country when Amazon won't
-              </Blurb>
-              <Blurb2>
-                Just add our Warehouse on address line 1 during checkout
-              </Blurb2>
+              <CustomH1>Welcome to Cameroon Street Food</CustomH1>
             </HeroContent>
-
-            <IconContainer>
-              <StyledIcon />
-            </IconContainer>
           </HeroContentContainer>
         </HeroBackgroundImage>
       </HerosContainer>
-      <HerosCardContainer>
-        <HerosCard1
-          title={`Find Your Product`}
-          blurb={`    We are a Ecommerce Store Shipping products to Africa from Amazon,
-            Best Buy, Autotrader and more`}
-          icon={<FaSearch />}
-        />
-        <HerosCard1
-          title={`Checkout Via Amazon`}
-          blurb={`             Amazon will fullfill the orders, send it to our warehouse. We will
-          ship your product with tracking number to your location immediately`}
-          icon={<FaAmazon />}
-        />
-        <HerosCard1
-          title={`Safe Secure Transactions`}
-          blurb={`            Your orders are 100% guaranteed by Amazon and by Alliances119 to
-          arrive in a fast and timely manner.`}
-          icon={<FaCcAmazonPay />}
-        />
 
-        <HerosCard1
-          title={`Many Brands & Growing!`}
-          blurb={`   We are the fastest growing new kid on the block, delivering
-          ecommerce products to the entire African continent. Providing
-          unparalled customer service.`}
-          icon={<FaEnvira />}
-        />
-      </HerosCardContainer>
-
+      <SectionGrey>
+        <AboutUs />
+      </SectionGrey>
+      <Section>
+        <AboutOurFood />
+      </Section>
+      <SectionGrey>
+        <Catering />
+      </SectionGrey>
+      <Section>
+        <Contact />
+      </Section>
       <Section>
         <CustomH2>
           <Bold>Featured</Bold> Products
@@ -342,15 +239,6 @@ const Home = ({ data }) => {
           ></SliderContainer1>
         </Slider>
       </Section>
-
-      <RenderAmazonProducts keyword={'iphones'} title={'iphone deals'} />
-
-      <RenderAmazonProducts
-        keyword={'under armour'}
-        title="Latest Under Armour"
-      />
-
-      <RenderAmazonProducts keyword={'Deals'} title="Todays Deals" />
 
       <SectionGrey>
         <Container1200>

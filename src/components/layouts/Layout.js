@@ -13,17 +13,17 @@ import '../../scss/main.scss';
 
 const theme = {
   colors: {
-    primary: 'rgb(240, 92, 34)',
-    primaryDark: 'rgb(232, 70, 11)',
-    primaryLight: 'rgb(249, 106, 54)',
+    primary: 'rgb(220,128,37)',
+    primaryDark: 'rgb(207, 113, 21)',
+    primaryLight: 'rgb(242, 146, 51)',
     primaryVeryLight: 'rgb(244, 156, 124)',
-    primaryTransparent: 'rgb(240, 92, 34,0.15)',
+    primaryTransparent: 'rgb(220,128,37,0.10)',
     secondary: 'rgb(24, 163, 201)',
     lightgrey: '#E0E0E0',
     lightgrey2: 'rgb(224, 217, 217)',
     white: '#F3F1F1',
     black: '#1a1a1a',
-    blackTransparent: 'rgba(41, 43, 46, 0.8)',
+    blackTransparent: 'rgba(41, 43, 46, 0.3)',
     darkGrey: 'rgb(109, 109, 109)',
     red: 'rgb(218, 18, 31)',
     redTransparent: 'rgb(218, 18, 31,0.8)',
@@ -113,12 +113,12 @@ const Layout = ({ children, full }) => {
           body {
             background: ${bodyColor};
             margin: 0;
-            font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
+            font-family: Merienda, Cursive, Helvetica, Arial, sans-serif;
           }
 
           h1 {
             color: ${primaryColor};
-            font-family: Poppins;
+            font-family: Merienda;
           }
         `}
       />

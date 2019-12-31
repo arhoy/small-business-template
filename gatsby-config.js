@@ -30,19 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-emotion`,
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Poppins`,
-          },
-          {
-            family: `Roboto`,
-          },
-        ],
-      },
-    },
+
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -51,7 +39,13 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Merienda\:300,500,700`, `Sacramento`, `Montserrat`],
+        display: 'swap',
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

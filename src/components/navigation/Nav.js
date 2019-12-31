@@ -105,21 +105,26 @@ const NavSuperStore1 = () => {
       <Header>
         <Logo>
           <LogoLink to="/">
-            <LogoSpan2>
-              ALLIANCES<span>119</span>
-            </LogoSpan2>
+            <LogoSpan2>Cameroon Street Food</LogoSpan2>
           </LogoLink>
         </Logo>
 
         <NavContainer>
-          <MyMenu3 color={'white'} title={`SHOP`}>
+          <MyMenu3 color={'white'} title={`Home`}>
             <Container1200>
               <MegaMenu2 background={'white'}>
                 <SuperStoreList1 />
               </MegaMenu2>
             </Container1200>
           </MyMenu3>
-          <MyMenu3 color={'white'} title={`BRANDS`}>
+          <MyMenu3 color={'white'} title={`About`}>
+            <Container1200>
+              <MegaMenu2 background={'white'}>
+                <SuperStoreList2 />
+              </MegaMenu2>
+            </Container1200>
+          </MyMenu3>
+          <MyMenu3 color={'white'} title={`Recipes`}>
             <Container1200>
               <MegaMenu2 background={'white'}>
                 <SuperStoreList2 />

@@ -64,6 +64,8 @@ const Span = styled.span``;
 
 const P = styled.p`
   padding: 1rem 0rem;
+  font-family: Montserrat, Arial;
+  line-height: 2.4rem;
   font-size: 1.6rem;
   @media (max-width: ${props => props.theme.screenSize.mobileL}) {
     text-align: center;
