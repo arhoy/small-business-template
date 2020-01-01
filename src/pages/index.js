@@ -66,6 +66,9 @@ const CustomH1 = styled(H1)`
   text-shadow: -3px 3px 0 ${props => props.theme.colors.black};
   padding: 0.75rem 1rem;
   background: ${props => props.theme.colors.blackTransparent};
+  & span {
+    display: block;
+  }
 `;
 
 export const query = graphql`
@@ -112,7 +115,10 @@ const Home = ({ data }) => {
         <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
           <HeroContentContainer>
             <HeroContent>
-              <CustomH1>Welcome to Cameroon Street Food</CustomH1>
+              <CustomH1>
+                <span>Welcome To</span>
+                <span>Cameroon Food Invite</span>
+              </CustomH1>
             </HeroContent>
           </HeroContentContainer>
         </HeroBackgroundImage>

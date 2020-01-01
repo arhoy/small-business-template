@@ -1,71 +1,71 @@
-import { graphql, useStaticQuery } from 'gatsby';
+// import { graphql, useStaticQuery } from 'gatsby';
 
-const GetAllProductsHooks = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allBags: allContentfulFashionTwoBags {
-        nodes {
-          id
-          productName
-          productSlug
-          shortDescription
-          price
-          discountPrice
-          tags
-          rating
-          displayBadge
-          mainImage {
-            fluid(quality: 90, maxWidth: 300) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-        }
-      }
-      allShoes: allContentfulFashionTwoShoes {
-        nodes {
-          id
-          productName
-          productSlug
-          shortDescription
-          price
-          discountPrice
-          tags
-          rating
-          displayBadge
-          mainImage {
-            fluid(quality: 90, maxWidth: 300) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-        }
-      }
-      allPants: allContentfulFashionTwoPants {
-        nodes {
-          id
-          productName
-          productSlug
-          shortDescription
-          price
-          discountPrice
-          tags
-          rating
-          displayBadge
-          mainImage {
-            fluid(quality: 90, maxWidth: 300) {
-              ...GatsbyContentfulFluid_withWebp
-            }
-          }
-        }
-      }
-    }
-  `);
+// const GetAllProductsHooks = () => {
+//   const data = useStaticQuery(graphql`
+//     {
+//       allBags: allContentfulFashionTwoBags {
+//         nodes {
+//           id
+//           productName
+//           productSlug
+//           shortDescription
+//           price
+//           discountPrice
+//           tags
+//           rating
+//           displayBadge
+//           mainImage {
+//             fluid(quality: 90, maxWidth: 300) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//         }
+//       }
+//       allShoes: allContentfulFashionTwoShoes {
+//         nodes {
+//           id
+//           productName
+//           productSlug
+//           shortDescription
+//           price
+//           discountPrice
+//           tags
+//           rating
+//           displayBadge
+//           mainImage {
+//             fluid(quality: 90, maxWidth: 300) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//         }
+//       }
+//       allPants: allContentfulFashionTwoPants {
+//         nodes {
+//           id
+//           productName
+//           productSlug
+//           shortDescription
+//           price
+//           discountPrice
+//           tags
+//           rating
+//           displayBadge
+//           mainImage {
+//             fluid(quality: 90, maxWidth: 300) {
+//               ...GatsbyContentfulFluid_withWebp
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `);
 
-  const items = data.allBags.nodes.concat(
-    data.allShoes.nodes,
-    data.allPants.nodes,
-  );
+//   const items = data.allBags.nodes.concat(
+//     data.allShoes.nodes,
+//     data.allPants.nodes,
+//   );
 
-  return items;
-};
+//   return items;
+// };
 
-export default GetAllProductsHooks;
+// export default GetAllProductsHooks;
