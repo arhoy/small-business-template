@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
 
 import { FaAlignRight } from 'react-icons/fa';
@@ -37,10 +38,13 @@ const Header = styled.header`
 `;
 
 const Logo = styled.div`
+  position: relative;
   padding: 0;
   margin: 0;
 `;
 const LogoLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
   font-size: 2.9rem;
   padding: 0;
   margin: 0;
@@ -48,7 +52,7 @@ const LogoLink = styled(Link)`
   text-decoration: none !important;
 `;
 
-const LogoSpan2 = styled.span`
+const LogoSpan2 = styled.div`
   color: ${props => props.theme.colors.white};
   letter-spacing: 4px;
   display: flex;
@@ -60,6 +64,11 @@ const LogoSpan2 = styled.span`
     font-style: italic;
     border-bottom: thick double ${props => props.theme.colors.primaryLight};
   }
+`;
+
+const LogoSpan1 = styled.span`
+  color: ${props => props.theme.colors.white};
+  font-size: 1.5rem;
 `;
 
 const NavContainer = styled.nav`
@@ -83,6 +92,7 @@ const BurgerIcon = styled(FaAlignRight)`
 `;
 
 const CustomButtonStyle2 = styled(ButtonStyle2)`
+  font-size: 1.6rem;
   display: flex;
 `;
 
@@ -96,7 +106,27 @@ const CustomLink = styled(NoStyleLink)`
   }
 `;
 
+const LogoImage = styled.img`
+  width: 66px;
+  position: absolute;
+  top: 10px;
+  right: -35px;
+  z-index: -1;
+`;
+
 const NavSuperStore1 = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "CSF.png" }) {
+        sharp: childImageSharp {
+          fixed(width: 100) {
+            src
+          }
+        }
+      }
+    }
+  `);
+
   const [mobileMenuOpen, setMobileMenu] = useState(false);
 
   const mobileMenuHandler = () => {
@@ -108,7 +138,11 @@ const NavSuperStore1 = () => {
       <Header>
         <Logo>
           <LogoLink to="/">
-            <LogoSpan2>Food Invite</LogoSpan2>
+            <LogoSpan2>Cameroon</LogoSpan2>
+
+            <LogoImage src={image.sharp.fixed.src} />
+
+            <LogoSpan1>Food Invite</LogoSpan1>
           </LogoLink>
         </Logo>
 
@@ -125,7 +159,7 @@ const NavSuperStore1 = () => {
           </MyMenu3> */}
 
           <CustomButtonStyle2>
-            <a href="tel:587-772-5536">587-772-5536</a>
+            <a href="tel:587-920-9921">587-920-9921</a>
           </CustomButtonStyle2>
         </NavContainer>
 
