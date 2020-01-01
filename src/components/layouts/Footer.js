@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import socialIcons from '../../constants/socialIcons';
 import NoStyleLink from '../Links/NoStyleLink';
 import { NetlifyFormV2 } from '../forms/NetlifyFormV2';
+import recipeData from '../../../apis/recipeData';
 
 const d = new Date().getFullYear();
 
@@ -124,18 +125,17 @@ const Footer = () => {
             <LinkContainers>
               <LinkHeaders>Text Or Call</LinkHeaders>
               <LinkHeadersPrimary style={{ marginBottom: '-0.5rem' }}>
-                587-772-5536
+                587-920-9921
               </LinkHeadersPrimary>
             </LinkContainers>
             <LinkContainers>
-              <LinkHeaders>Amazon Products</LinkHeaders>
-              <CustomLinks to="/new-releases">New Releases</CustomLinks>
-              <CustomLinks to="/best-sellers">Best Sellers</CustomLinks>
-            </LinkContainers>
-            <LinkContainers>
-              <LinkHeaders>Can't Find Your Product?</LinkHeaders>
-              <CustomLinks to="/contact">Tell Us Which Product</CustomLinks>
-              <CustomLinks to="/contact">Report an issue</CustomLinks>
+              <LinkHeaders>Recipes </LinkHeaders>
+              {recipeData &&
+                recipeData.map((recipe, i) => (
+                  <CustomLinks key={i} to={`/recipes/${recipe.slug}`}>
+                    {recipe.title}
+                  </CustomLinks>
+                ))}
             </LinkContainers>
           </LinkColumnContainers>
           <LinkColumnContainers>
@@ -155,28 +155,19 @@ const Footer = () => {
               </SocialIconContainer>
             </LinkContainers>
             <LinkContainers>
-              <LinkHeaders>About Us</LinkHeaders>
-              <CustomLinks to="/">Why Choose Us</CustomLinks>
-              <CustomLinks to="/">Blog</CustomLinks>
-              <CustomLinks to="/reward-card">Rewards Card</CustomLinks>
-              <CustomLinks to="/">Who We Are</CustomLinks>
+              <LinkHeaders>We Cater</LinkHeaders>
               <CustomLinks to="/contact">Contact Us</CustomLinks>
             </LinkContainers>
           </LinkColumnContainers>
           <LinkColumnContainers>
             <LinkContainers>
-              <LinkHeaders>Address</LinkHeaders>
-              <LinkDescription>
-                101 200st, Edmonton, AB TKL 2X1, Canada
-              </LinkDescription>
+              <LinkHeaders>Email Us</LinkHeaders>
+              <LinkDescription>claudinearrey@gmail.com</LinkDescription>
             </LinkContainers>
             <LinkContainers>
-              <LinkHeaders>Our Site</LinkHeaders>
-              <CustomLinks to="/products">Products</CustomLinks>
-              <CustomLinks to="/brands">Brands</CustomLinks>
-              <CustomLinks to="/">Terms</CustomLinks>
-              <CustomLinks to="/">Privacy</CustomLinks>
-              <CustomLinks to="/contact">Contact</CustomLinks>
+              <LinkHeaders>Can't Find Your Dish?</LinkHeaders>
+              <CustomLinks to="/contact">Tell Us Which One</CustomLinks>
+              <CustomLinks to="/contact">Report an issue</CustomLinks>
             </LinkContainers>
           </LinkColumnContainers>
         </MenuRHS>

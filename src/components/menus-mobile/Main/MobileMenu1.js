@@ -23,12 +23,12 @@ export const MobileMenu1 = ({ mobileMenuHandler }) => {
         </LinkWrapper>
         <LinkWrapper>
           {' '}
-          <StyledLink to="/products"> Products </StyledLink>{' '}
+          <StyledLink to="/recipes"> Recipes </StyledLink>{' '}
         </LinkWrapper>
 
         <LinkWrapper>
           {' '}
-          <StyledLink to="/brands"> Brands</StyledLink>{' '}
+          <StyledLink to="/contact"> Contact</StyledLink>{' '}
         </LinkWrapper>
       </LinkContainerUl>
     </MobileMenuContainer>

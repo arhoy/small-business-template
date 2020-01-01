@@ -11,6 +11,8 @@ import {
   StyledImage,
   CustomPHome,
 } from './HomeStyling';
+import { ButtonStyle2 } from '../reusableStyles/buttons/Button';
+import NoStyleLink from '../Links/NoStyleLink';
 
 const AboutUs = () => {
   const { image } = useStaticQuery(graphql`
@@ -49,6 +51,9 @@ const AboutUs = () => {
           is exuberant! And if you are reading this, WELCOME TO THE FOOD INVITE
           FAMILY!
         </CustomPHome>
+        <ButtonStyle2>
+          <NoStyleLink to="/recipes">View Recipes</NoStyleLink>
+        </ButtonStyle2>
       </BlurbContainer>
       <ImageContainer>
         <StyledImage fluid={image.sharp.fluid} fadeIn="soft" />

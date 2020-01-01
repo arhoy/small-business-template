@@ -27,8 +27,9 @@ const DropDownContent = styled.div`
 
 const Title = styled.span`
   font-weight: bolder;
+  font-family: Merienda;
   cursor: pointer;
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.color || props.theme.colors.white};
   &:hover {
     display: inline-block;
   }
@@ -57,7 +58,7 @@ const MyMenu3 = ({ title, children, color }) => {
   return (
     <Container>
       <Button onClick={menuHandler} active={menu}>
-        <Title style={{ color }}>{title}</Title>
+        <Title>{title}</Title>
 
         <Container800>
           {menu && (

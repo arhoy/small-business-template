@@ -5,17 +5,10 @@ import { FaAlignRight } from 'react-icons/fa';
 
 import styled from '@emotion/styled';
 
-import MyMenu3 from '../menus/MyMenu3';
-
-import { Container1200 } from '../reusableStyles/sections/Sections';
-
-import MegaMenu2 from '../menus/MegaMenus/MegaMenu2';
-
-import SuperStoreList1 from '../menus/MegaMenus/MegaMenuLists/Style2/SuperStoreList1';
-
 import { MobileMenu1 } from '../menus-mobile/Main/MobileMenu1';
 import { ButtonStyle2 } from '../reusableStyles/buttons/Button';
-import SuperStoreList2 from '../menus/MegaMenus/MegaMenuLists/Style2/SuperStoreList2';
+
+import NoStyleLink from '../Links/NoStyleLink';
 
 const Header = styled.header`
   height: 80px;
@@ -93,6 +86,16 @@ const CustomButtonStyle2 = styled(ButtonStyle2)`
   display: flex;
 `;
 
+const CustomLink = styled(NoStyleLink)`
+  color: ${props => props.theme.colors.white};
+  height: 100%;
+  padding: 1rem;
+  margin: 1rem;
+  & :hover {
+    background: ${props => props.theme.colors.primary};
+  }
+`;
+
 const NavSuperStore1 = () => {
   const [mobileMenuOpen, setMobileMenu] = useState(false);
 
@@ -105,32 +108,21 @@ const NavSuperStore1 = () => {
       <Header>
         <Logo>
           <LogoLink to="/">
-            <LogoSpan2>Cameroon Street Food</LogoSpan2>
+            <LogoSpan2>Food Invite</LogoSpan2>
           </LogoLink>
         </Logo>
 
         <NavContainer>
-          <MyMenu3 color={'white'} title={`Home`}>
+          <CustomLink to="/">Home </CustomLink>
+          <CustomLink to="/recipes">Recipes </CustomLink>
+
+          {/* <MyMenu3 color={'white'} title={`Recipes`}>
             <Container1200>
               <MegaMenu2 background={'white'}>
-                <SuperStoreList1 />
+                <MainList2 />
               </MegaMenu2>
             </Container1200>
-          </MyMenu3>
-          <MyMenu3 color={'white'} title={`About`}>
-            <Container1200>
-              <MegaMenu2 background={'white'}>
-                <SuperStoreList2 />
-              </MegaMenu2>
-            </Container1200>
-          </MyMenu3>
-          <MyMenu3 color={'white'} title={`Recipes`}>
-            <Container1200>
-              <MegaMenu2 background={'white'}>
-                <SuperStoreList2 />
-              </MegaMenu2>
-            </Container1200>
-          </MyMenu3>
+          </MyMenu3> */}
 
           <CustomButtonStyle2>
             <a href="tel:587-772-5536">587-772-5536</a>

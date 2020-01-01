@@ -6,7 +6,7 @@ const H1 = styled.h1`
   color: ${props => props.theme.colors.primary};
   text-shadow: -3px 3px 0 rgba(10, 14, 39, 0.1);
   @media (max-width: ${props => props.theme.screenSize.mobileL}) {
-    font-size: 3.4rem;
+    font-size: 4rem;
   }
 `;
 
@@ -72,6 +72,10 @@ const P = styled.p`
   }
 `;
 
+const PCenter = styled(P)`
+  text-align: center;
+`;
+
 const PBasic = styled.p`
   padding: 1rem 0rem;
   font-size: 1.6rem;
@@ -89,6 +93,7 @@ export {
   Ul,
   Span,
   Bold,
+  PCenter,
   P,
   PBasic,
   ProductPageH1,

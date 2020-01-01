@@ -12,6 +12,8 @@ import {
   StyledImage,
   CustomPHome,
 } from './HomeStyling';
+import { ButtonStyle2 } from '../reusableStyles/buttons/Button';
+import NoStyleLink from '../Links/NoStyleLink';
 
 const Catering = () => {
   const { image } = useStaticQuery(graphql`
@@ -44,6 +46,10 @@ const Catering = () => {
           potential growth, we at this point are only able to cater for small
           gatherings of <Bold>20-30</Bold> persons max.
         </CustomPHome>
+
+        <ButtonStyle2>
+          <NoStyleLink to="/recipes">View Recipes</NoStyleLink>
+        </ButtonStyle2>
       </BlurbContainer>
       <ImageContainer>
         <StyledImage fluid={image.sharp.fluid} fadeIn="soft" />

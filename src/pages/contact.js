@@ -16,7 +16,7 @@ const contact = () => {
       <Section>
         <Container800>
           <H1>Contact Page</H1>
-          <P> You can reach me at (587) 772 5536 or fill out the form below</P>
+          <P> You can reach me at (587) 920 9921 or fill out the form below</P>
 
           <NetlifyFormV2 background="#EAEDED" color="black" />
         </Container800>

@@ -23,7 +23,7 @@ const CustomContainer = styled(Container)`
 const Contact = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "plantains2.jpg" }) {
+      image: file(relativePath: { eq: "recipes/plantains2.jpg" }) {
         sharp: childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_withWebp

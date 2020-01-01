@@ -11,6 +11,8 @@ import {
   StyledImage,
   CustomPHome,
 } from './HomeStyling';
+import { ButtonStyle2 } from '../reusableStyles/buttons/Button';
+import NoStyleLink from '../Links/NoStyleLink';
 
 const CustomContainer = styled(Container)`
   @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
@@ -22,7 +24,7 @@ const CustomContainer = styled(Container)`
 const AboutOurFood = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "whole-roasted-fish.jpg" }) {
+      image: file(relativePath: { eq: "recipes/Whole_Roasted_fish.jpg" }) {
         sharp: childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_withWebp
@@ -58,6 +60,9 @@ const AboutOurFood = () => {
             ❤️
           </span>
         </CustomPHome>
+        <ButtonStyle2>
+          <NoStyleLink to="/recipes">View Recipes</NoStyleLink>
+        </ButtonStyle2>
       </BlurbContainer>
     </CustomContainer>
   );
