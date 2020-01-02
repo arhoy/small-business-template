@@ -56,7 +56,7 @@ const AboutUs = () => {
         </ButtonStyle2>
       </BlurbContainer>
       <ImageContainer>
-        <StyledImage fluid={image.sharp.fluid} fadeIn="soft" />
+        <StyledImage fluid={image.sharp.fluid} fadeIn={true} />
       </ImageContainer>
     </Container>
   );

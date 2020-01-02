@@ -17,6 +17,10 @@ const Container = styled.div`
 
 const ImageContainer = styled.div``;
 
+const ImageContainerSlider = styled.div`
+  max-width: 50rem;
+`;
+
 const BlurbContainer = styled.div``;
 
 const StyledImage = styled(Image)`
@@ -49,6 +53,7 @@ const CustomH2 = styled(H2)`
 export {
   Container,
   ImageContainer,
+  ImageContainerSlider,
   BlurbContainer,
   StyledImage,
   CustomP,

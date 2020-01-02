@@ -107,11 +107,16 @@ const CustomLink = styled(NoStyleLink)`
 `;
 
 const LogoImage = styled.img`
-  width: 66px;
+  width: 60px;
   position: absolute;
-  top: 10px;
-  right: -35px;
+  top: 12px;
+  right: -65px;
   z-index: -1;
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    width: 50px;
+    top: 12px;
+    right: -40px;
+  }
 `;
 
 const NavSuperStore1 = () => {
@@ -138,11 +143,11 @@ const NavSuperStore1 = () => {
       <Header>
         <Logo>
           <LogoLink to="/">
-            <LogoSpan2>Cameroon</LogoSpan2>
+            <LogoSpan2>Food Invite</LogoSpan2>
 
             <LogoImage src={image.sharp.fixed.src} />
 
-            <LogoSpan1>Food Invite</LogoSpan1>
+            <LogoSpan1>Cameroon</LogoSpan1>
           </LogoLink>
         </Logo>
 

@@ -35,7 +35,7 @@ const Contact = () => {
   return (
     <CustomContainer>
       <ImageContainer>
-        <StyledImage fluid={image.sharp.fluid} fadeIn="soft" />
+        <StyledImage fluid={image.sharp.fluid} fadeIn={true} />
       </ImageContainer>
       <BlurbContainer>
         <CustomH2>Contact</CustomH2>

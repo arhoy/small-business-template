@@ -18,6 +18,8 @@ import AboutUs from '../components/home/AboutUs';
 import AboutOurFood from '../components/home/AboutOurFood';
 import Catering from '../components/home/Catering';
 import Contact from '../components/home/Contact';
+import Slider from 'react-slick';
+import SliderContainer2 from '../components/reusableStyles/slider/SliderContainer2';
 
 const HerosContainer = styled.div`
   z-index: -1;
@@ -41,6 +43,18 @@ const HeroBackgroundImage = styled(BackgroundImage)`
   background-position: top;
   align-items: top;
   opacity: 1 !important;
+  @media (max-width: ${props => props.theme.screenSize.nineHundred}) {
+    height: 70vh;
+  }
+  @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
+    height: 60vh;
+  }
+  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+    height: 40vh;
+  }
+  @media (max-width: ${props => props.theme.screenSize.mobileS}) {
+    height: 35vh;
+  }
 `;
 
 const HeroContentContainer = styled.div`
@@ -80,49 +94,77 @@ export const query = graphql`
         }
       }
     }
+    heroImage2: file(relativePath: { eq: "food_invite_2.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `;
 
 const Home = ({ data }) => {
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1000,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 2,
-  //         infinite: true,
-  //         dots: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //   ],
-  // };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplaySpeed: 5000,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <Layout full={true}>
-      <HerosContainer>
-        <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
-          <HeroContentContainer>
-            <HeroContent>
-              <CustomH1>
-                <span>Welcome To</span>
-                <span>Cameroon Food Invite</span>
-              </CustomH1>
-            </HeroContent>
-          </HeroContentContainer>
-        </HeroBackgroundImage>
-      </HerosContainer>
+      <Slider {...settings}>
+        <SliderContainer2>
+          <HerosContainer>
+            <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
+              <HeroContentContainer>
+                <HeroContent>
+                  <CustomH1>
+                    <span>Welcome To</span>
+                    <span>Food Invite Cameroon</span>
+                  </CustomH1>
+                </HeroContent>
+              </HeroContentContainer>
+            </HeroBackgroundImage>
+          </HerosContainer>
+        </SliderContainer2>
+        <SliderContainer2>
+          <HerosContainer>
+            <HeroBackgroundImage fluid={data.heroImage2.childImageSharp.fluid}>
+              <HeroContentContainer>
+                <HeroContent>
+                  <CustomH1>
+                    <span>Welcome To</span>
+                    <span>Food Invite Cameroon</span>
+                  </CustomH1>
+                </HeroContent>
+              </HeroContentContainer>
+            </HeroBackgroundImage>
+          </HerosContainer>
+        </SliderContainer2>
+      </Slider>
 
       <SectionGrey>
         <AboutUs />

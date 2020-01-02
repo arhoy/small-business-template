@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Slider from 'react-slick';
 import Layout from '../../components/layouts/Layout';
 import {
   Section,
@@ -16,12 +17,27 @@ import {
   Calories,
 } from '../../components/recipes/EachRecipePage';
 import recipeData from '../../../apis/recipeData';
+import SliderContainer2 from '../../components/reusableStyles/slider/SliderContainer2';
 
 export const query = graphql`
   {
-    heroImage: file(
+    heroImage1: file(
       relativePath: { eq: "recipes/Whole_chicken_leg_with_thighs.jpg" }
     ) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    heroImage2: file(relativePath: { eq: "recipes/chicken_drumsticks.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    heroImage3: file(relativePath: { eq: "recipes/chicken_wing.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1000) {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -32,13 +48,52 @@ export const query = graphql`
 `;
 
 const Whole_chicken_leg_with_thighs = ({ data }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplaySpeed: 5000,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <Layout>
       <Section>
         <Container1200>
           <Container>
             <Title>{recipeData && recipeData[1].title}</Title>
-            <CustomImage fluid={data.heroImage.childImageSharp.fluid} />
+            <Slider {...settings}>
+              <SliderContainer2>
+                <CustomImage fluid={data.heroImage1.childImageSharp.fluid} />
+              </SliderContainer2>
+              <SliderContainer2>
+                <CustomImage fluid={data.heroImage2.childImageSharp.fluid} />
+              </SliderContainer2>
+              <SliderContainer2>
+                <CustomImage fluid={data.heroImage3.childImageSharp.fluid} />
+              </SliderContainer2>
+            </Slider>
+
             <SubContainer>
               <Description>
                 {recipeData && recipeData[1].description}

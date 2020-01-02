@@ -7,12 +7,14 @@ import {
   BlurbContainer,
   CustomH2,
   CustomP,
-  ImageContainer,
+  ImageContainerSlider,
   StyledImage,
   CustomPHome,
 } from './HomeStyling';
 import { ButtonStyle2 } from '../reusableStyles/buttons/Button';
 import NoStyleLink from '../Links/NoStyleLink';
+import Slider from 'react-slick';
+import SliderContainer2 from '../reusableStyles/slider/SliderContainer2';
 
 const CustomContainer = styled(Container)`
   @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
@@ -21,23 +23,62 @@ const CustomContainer = styled(Container)`
   }
 `;
 
-const AboutOurFood = () => {
-  const { image } = useStaticQuery(graphql`
+const AboutOurFood = ({ data }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplaySpeed: 5000,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const myImages = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "recipes/Whole_Roasted_fish.jpg" }) {
-        sharp: childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_withWebp
+      heroCarousel: allFile(filter: { relativePath: { regex: "/recipe/" } }) {
+        nodes {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_noBase64
+            }
           }
         }
       }
     }
   `);
+
+  console.log('IMGAEG', myImages);
   return (
     <CustomContainer>
-      <ImageContainer>
-        <StyledImage fluid={image.sharp.fluid} fadeIn="soft" />
-      </ImageContainer>
+      <ImageContainerSlider>
+        <Slider {...settings}>
+          {myImages.heroCarousel.nodes.map((image, i) => (
+            <SliderContainer2 key={i}>
+              <StyledImage fluid={image.childImageSharp.fluid} fadeIn={true} />
+            </SliderContainer2>
+          ))}
+        </Slider>
+      </ImageContainerSlider>
+
       <BlurbContainer>
         <CustomH2>About Our Food</CustomH2>
         <CustomP>From Our Kitchen to Your Table</CustomP>
