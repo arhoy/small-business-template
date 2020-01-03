@@ -57,6 +57,10 @@ const HeroBackgroundImage = styled(BackgroundImage)`
   }
 `;
 
+const HeroBackgroundImage2 = styled(HeroBackgroundImage)`
+  background-position: center;
+`;
+
 const HeroContentContainer = styled.div`
   min-width: 30rem;
   position: absolute;
@@ -109,8 +113,8 @@ const Home = ({ data }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplaySpeed: 5000,
-    autoplay: true,
+    // autoplaySpeed: 5000,
+    // autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: false,
@@ -152,7 +156,7 @@ const Home = ({ data }) => {
         </SliderContainer2>
         <SliderContainer2>
           <HerosContainer>
-            <HeroBackgroundImage fluid={data.heroImage2.childImageSharp.fluid}>
+            <HeroBackgroundImage2 fluid={data.heroImage2.childImageSharp.fluid}>
               <HeroContentContainer>
                 <HeroContent>
                   <CustomH1>
@@ -161,7 +165,7 @@ const Home = ({ data }) => {
                   </CustomH1>
                 </HeroContent>
               </HeroContentContainer>
-            </HeroBackgroundImage>
+            </HeroBackgroundImage2>
           </HerosContainer>
         </SliderContainer2>
       </Slider>
