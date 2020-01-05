@@ -57,10 +57,6 @@ const HeroBackgroundImage = styled(BackgroundImage)`
   }
 `;
 
-const HeroBackgroundImage2 = styled(HeroBackgroundImage)`
-  background-position: center;
-`;
-
 const HeroContentContainer = styled.div`
   min-width: 30rem;
   position: absolute;
@@ -98,13 +94,6 @@ export const query = graphql`
         }
       }
     }
-    heroImage2: file(relativePath: { eq: "food_invite_2.jpg" }) {
-      childImageSharp {
-        fluid(quality: 90, maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
   }
 `;
 
@@ -118,7 +107,6 @@ const Home = ({ data }) => {
     pauseOnHover: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 1000,
@@ -153,20 +141,6 @@ const Home = ({ data }) => {
                 </HeroContent>
               </HeroContentContainer>
             </HeroBackgroundImage>
-          </HerosContainer>
-        </SliderContainer2>
-        <SliderContainer2>
-          <HerosContainer>
-            <HeroBackgroundImage2 fluid={data.heroImage2.childImageSharp.fluid}>
-              <HeroContentContainer>
-                <HeroContent>
-                  <CustomH1>
-                    <span>Welcome To</span>
-                    <span>Food Invite Cameroon</span>
-                  </CustomH1>
-                </HeroContent>
-              </HeroContentContainer>
-            </HeroBackgroundImage2>
           </HerosContainer>
         </SliderContainer2>
       </Slider>

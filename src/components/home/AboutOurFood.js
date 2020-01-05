@@ -30,9 +30,9 @@ const AboutOurFood = ({ data }) => {
     speed: 500,
     autoplaySpeed: 5000,
     autoplay: true,
+    pauseOnHover: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 1000,
@@ -66,14 +66,13 @@ const AboutOurFood = ({ data }) => {
     }
   `);
 
-  console.log('IMGAEG', myImages);
   return (
     <CustomContainer>
       <ImageContainerSlider>
         <Slider {...settings}>
           {myImages.heroCarousel.nodes.map((image, i) => (
             <SliderContainer2 key={i}>
-              <StyledImage fluid={image.childImageSharp.fluid} fadeIn={true} />
+              <StyledImage fluid={image.childImageSharp.fluid} fadeIn={false} />
             </SliderContainer2>
           ))}
         </Slider>

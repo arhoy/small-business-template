@@ -1,7 +1,7 @@
 {
-  "name": "cameroonstreetfood",
+  "name": "foodinvitecameroon",
   "private": true,
-  "description": "Official repo for alliances119.com",
+  "description": "Official repo for foodinvitecameroon.com",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {

@@ -18,7 +18,7 @@ import NoStyleLink from '../Links/NoStyleLink';
 const Catering = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "food-invite.jpg" }) {
+      image: file(relativePath: { eq: "food_invite_2.jpg" }) {
         sharp: childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_withWebp
@@ -30,7 +30,7 @@ const Catering = () => {
   return (
     <Container>
       <BlurbContainer>
-        <CustomH2>CATERING</CustomH2>
+        <CustomH2>Catering</CustomH2>
         <CustomP>Let us Cater to your Next Event...</CustomP>
         <CustomPHome>
           Let us cater to your next Event. Be it a Small Wedding, Bachelor's

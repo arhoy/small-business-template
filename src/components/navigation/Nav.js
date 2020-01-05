@@ -56,6 +56,7 @@ const LogoSpan2 = styled.div`
   color: ${props => props.theme.colors.white};
   letter-spacing: 4px;
   display: flex;
+  font-family: Josefin Sans;
 
   border-bottom: 2px solid ${props => props.theme.colors.primary};
   & span {
@@ -66,10 +67,10 @@ const LogoSpan2 = styled.div`
   }
 `;
 
-const LogoSpan1 = styled.span`
-  color: ${props => props.theme.colors.white};
-  font-size: 1.5rem;
-`;
+// const LogoSpan1 = styled.span`
+//   color: ${props => props.theme.colors.white};
+//   font-size: 1.5rem;
+// `;
 
 const NavContainer = styled.nav`
   color: ${props => props.theme.colors.white};
@@ -106,18 +107,18 @@ const CustomLink = styled(NoStyleLink)`
   }
 `;
 
-const LogoImage = styled.img`
-  width: 60px;
-  position: absolute;
-  top: 12px;
-  right: -65px;
-  z-index: -1;
-  @media (max-width: ${props => props.theme.screenSize.mobileL}) {
-    width: 50px;
-    top: 12px;
-    right: -40px;
-  }
-`;
+// const LogoImage = styled.img`
+//   width: 60px;
+//   position: absolute;
+//   top: 12px;
+//   right: -65px;
+//   z-index: -1;
+//   @media (max-width: ${props => props.theme.screenSize.mobileL}) {
+//     width: 50px;
+//     top: 12px;
+//     right: -40px;
+//   }
+// `;
 
 const NavSuperStore1 = () => {
   const { image } = useStaticQuery(graphql`
@@ -145,9 +146,7 @@ const NavSuperStore1 = () => {
           <LogoLink to="/">
             <LogoSpan2>Food Invite</LogoSpan2>
 
-            <LogoImage src={image.sharp.fixed.src} />
-
-            <LogoSpan1>Cameroon</LogoSpan1>
+            {/* <LogoImage src={image.sharp.fixed.src} /> */}
           </LogoLink>
         </Logo>
 

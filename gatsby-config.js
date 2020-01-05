@@ -41,7 +41,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Merienda\:300,500,700`, `Sacramento`, `Montserrat`],
+        fonts: [
+          `Merienda\:300,500,700`,
+          `Sacramento`,
+          `Montserrat`,
+          `Josefin Sans\:700`,
+        ],
         display: 'swap',
       },
     },
