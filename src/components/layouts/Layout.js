@@ -22,7 +22,7 @@ const theme = {
     lightgrey: '#E0E0E0',
     lightgrey2: 'rgb(224, 217, 217)',
     white: '#F3F1F1',
-    black: '#1a1a1a',
+    black: 'black',
     blackTransparent: 'rgba(41, 43, 46, 0.3)',
     darkGrey: 'rgb(109, 109, 109)',
     red: 'rgb(218, 18, 31)',

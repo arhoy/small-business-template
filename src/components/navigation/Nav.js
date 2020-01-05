@@ -52,26 +52,6 @@ const LogoLink = styled(Link)`
   text-decoration: none !important;
 `;
 
-const LogoSpan2 = styled.div`
-  color: ${props => props.theme.colors.white};
-  letter-spacing: 4px;
-  display: flex;
-  font-family: Josefin Sans;
-
-  border-bottom: 2px solid ${props => props.theme.colors.primary};
-  & span {
-    display: inline-block;
-    height: 40px;
-    font-style: italic;
-    border-bottom: thick double ${props => props.theme.colors.primaryLight};
-  }
-`;
-
-// const LogoSpan1 = styled.span`
-//   color: ${props => props.theme.colors.white};
-//   font-size: 1.5rem;
-// `;
-
 const NavContainer = styled.nav`
   color: ${props => props.theme.colors.white};
   display: flex;
@@ -107,25 +87,16 @@ const CustomLink = styled(NoStyleLink)`
   }
 `;
 
-// const LogoImage = styled.img`
-//   width: 60px;
-//   position: absolute;
-//   top: 12px;
-//   right: -65px;
-//   z-index: -1;
-//   @media (max-width: ${props => props.theme.screenSize.mobileL}) {
-//     width: 50px;
-//     top: 12px;
-//     right: -40px;
-//   }
-// `;
+const LogoImage = styled.img`
+  max-height: 80px;
+`;
 
 const NavSuperStore1 = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "CSF.png" }) {
+      image: file(relativePath: { eq: "FoodInviteLogo2.png" }) {
         sharp: childImageSharp {
-          fixed(width: 100) {
+          fluid(maxWidth: 600) {
             src
           }
         }
@@ -144,9 +115,7 @@ const NavSuperStore1 = () => {
       <Header>
         <Logo>
           <LogoLink to="/">
-            <LogoSpan2>Food Invite</LogoSpan2>
-
-            {/* <LogoImage src={image.sharp.fixed.src} /> */}
+            <LogoImage src={image.sharp.fluid.src} />
           </LogoLink>
         </Logo>
 
