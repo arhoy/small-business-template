@@ -12,7 +12,6 @@ import {
   Section,
   SectionGrey,
 } from '../components/reusableStyles/sections/Sections';
-import { H1 } from '../components/reusableStyles/typography/Typography';
 
 import AboutUs from '../components/home/AboutUs';
 import AboutOurFood from '../components/home/AboutOurFood';

@@ -40,9 +40,9 @@ const CustomBackgroundImage = styled(BackgroundImage)`
 const BlurbContainer = styled.div``;
 
 const StyledImage = styled(Image)`
-  max-width: 45rem;
-  object-fit: cover;
-  margin: 0 auto;
+  border-radius: 1rem;
+  max-width: 50rem;
+  margin: 2rem auto;
   @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
     margin-top: 2rem;
     width: 100%;

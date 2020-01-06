@@ -9,14 +9,15 @@ import {
   CustomP,
   ImageContainerSlider,
   CustomPHome,
-  CustomBackgroundImage,
+  StyledImage,
 } from './HomeStyling';
 import { ButtonStyle2 } from '../reusableStyles/buttons/Button';
 import NoStyleLink from '../Links/NoStyleLink';
 import Slider from 'react-slick';
 import SliderContainer2 from '../reusableStyles/slider/SliderContainer2';
 
-const CustomContainer = styled(Container)`
+const CustomContainer = styled.div`
+  display: flex;
   @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
     display: flex;
     flex-direction: column-reverse;
@@ -28,38 +29,74 @@ const AboutOurFood = ({ data }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     autoplay: true,
     pauseOnHover: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1000,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
   };
   const myImages = useStaticQuery(graphql`
-    query {
-      heroCarousel: allFile(filter: { relativePath: { regex: "/recipe/" } }) {
-        nodes {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+    {
+      heroImage1: file(relativePath: { eq: "recipes/Beef_Kebab__Soya.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage2: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage3: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage4: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage5: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage6: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage7: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage8: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      heroImage9: file(relativePath: { eq: "recipes/Beef_Kebab_2.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -68,15 +105,37 @@ const AboutOurFood = ({ data }) => {
 
   return (
     <CustomContainer>
-      <ImageContainerSlider>
+      <div>
         <Slider {...settings}>
-          {myImages.heroCarousel.nodes.map((image, i) => (
-            <SliderContainer2 key={i}>
-              <CustomBackgroundImage fluid={image.childImageSharp.fluid} />
-            </SliderContainer2>
-          ))}
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage1.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage2.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage3.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage4.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage5.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage6.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage7.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage8.childImageSharp.fluid} />
+          </SliderContainer2>
+          <SliderContainer2>
+            <StyledImage fluid={myImages.heroImage9.childImageSharp.fluid} />
+          </SliderContainer2>
         </Slider>
-      </ImageContainerSlider>
+      </div>
 
       <BlurbContainer>
         <CustomH2>About Our Food</CustomH2>
