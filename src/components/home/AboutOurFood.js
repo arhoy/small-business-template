@@ -59,7 +59,7 @@ const AboutOurFood = ({ data }) => {
         nodes {
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }

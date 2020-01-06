@@ -22,7 +22,6 @@ const SubContainer = styled.div`
 
 const Title = styled(H1)`
   margin-bottom: 2rem;
-  text-transform: uppercase;
 `;
 
 const Description = styled(PBasic)`
