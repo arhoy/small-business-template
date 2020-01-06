@@ -28,14 +28,9 @@ const AboutOurFood = ({ data }) => {
   const settings = {
     dots: true,
     infinite: true,
-<<<<<<< HEAD
-    speed: 500,
-    autoplaySpeed: 2000,
-=======
     speed: 1000,
     autoplaySpeed: 3000,
     fadeIn: false,
->>>>>>> temp
     autoplay: true,
     pauseOnHover: false,
     slidesToShow: 1,
