@@ -72,7 +72,7 @@ const AboutOurFood = ({ data }) => {
         <Slider {...settings}>
           {myImages.heroCarousel.nodes.map((image, i) => (
             <SliderContainer2 key={i}>
-              <StyledImage fluid={image.childImageSharp.fluid} fadeIn={false} />
+              <StyledImage fluid={image.childImageSharp.fluid} />
             </SliderContainer2>
           ))}
         </Slider>
