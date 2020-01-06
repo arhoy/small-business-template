@@ -45,8 +45,12 @@ module.exports = {
           `Merienda\:300,500,700`,
           `Sacramento`,
           `Montserrat`,
+<<<<<<< HEAD
           `Josefin Sans\:700`,
           `Tangerine`,
+=======
+          `Parisienne`,
+>>>>>>> temp
         ],
         display: 'swap',
       },

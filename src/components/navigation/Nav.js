@@ -94,7 +94,7 @@ const LogoImage = styled.img`
 const NavSuperStore1 = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "FoodInviteLogoNew.png" }) {
+      image: file(relativePath: { eq: "FoodInviteLogo.png" }) {
         sharp: childImageSharp {
           fluid(maxWidth: 600) {
             src

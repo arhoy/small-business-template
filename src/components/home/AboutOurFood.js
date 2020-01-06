@@ -28,8 +28,14 @@ const AboutOurFood = ({ data }) => {
   const settings = {
     dots: true,
     infinite: true,
+<<<<<<< HEAD
     speed: 500,
     autoplaySpeed: 2000,
+=======
+    speed: 1000,
+    autoplaySpeed: 3000,
+    fadeIn: false,
+>>>>>>> temp
     autoplay: true,
     pauseOnHover: false,
     slidesToShow: 1,
@@ -107,6 +113,7 @@ const AboutOurFood = ({ data }) => {
     <CustomContainer>
       <div>
         <Slider {...settings}>
+<<<<<<< HEAD
           <SliderContainer2>
             <StyledImage fluid={myImages.heroImage1.childImageSharp.fluid} />
           </SliderContainer2>
@@ -134,6 +141,13 @@ const AboutOurFood = ({ data }) => {
           <SliderContainer2>
             <StyledImage fluid={myImages.heroImage9.childImageSharp.fluid} />
           </SliderContainer2>
+=======
+          {myImages.heroCarousel.nodes.map((image, i) => (
+            <SliderContainer2 key={i}>
+              <StyledImage fluid={image.childImageSharp.fluid} />
+            </SliderContainer2>
+          ))}
+>>>>>>> temp
         </Slider>
       </div>
 

@@ -50,7 +50,7 @@ const Contact = () => {
           This being a passion we are excited to share to you all, comes with
           its own limitations apparently. We apologise ahead. We are however
           available to cater three days a week Thursday, Friday and Saturdays.
-          Orders most be placed a week prior to your event date. There are
+          Orders must be placed a week prior to your event date. There are
           however a handful of West African Traditional dishes we can cater to
           not outlined here. Hit us up and LETS SERVE YOUR IMAGINATION!
         </CustomPHome>
