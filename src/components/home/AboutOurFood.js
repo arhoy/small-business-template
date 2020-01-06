@@ -96,7 +96,7 @@ const AboutOurFood = ({ data }) => {
           (CHARCOAL). The taste just can't be beat! Our food is mostly
           <Bold> spicy </Bold> but can be done to accommodate your tolerance to
           heat. Food is cooked in our home boosting Hygienization, Warmth and
-          LOVE.{' '}
+          LOVE.
           <span role="img" aria-label="">
             ❤️
           </span>
