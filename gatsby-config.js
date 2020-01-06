@@ -46,6 +46,7 @@ module.exports = {
           `Sacramento`,
           `Montserrat`,
           `Josefin Sans\:700`,
+          `Tangerine`,
         ],
         display: 'swap',
       },

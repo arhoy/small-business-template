@@ -25,11 +25,16 @@ const ImageContainerSlider = styled.div`
 const CustomBackgroundImage = styled(BackgroundImage)`
   max-width: 45rem;
   height: 30rem;
+  margin: 0 auto;
 
   background-size: cover;
   background-position: center;
 
   opacity: 1 !important;
+  @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
+    margin-top: 2rem;
+    width: 100%;
+  }
 `;
 
 const BlurbContainer = styled.div``;
@@ -58,7 +63,7 @@ const CustomPHome = styled(PBasic)`
 const CustomH2 = styled(H2)`
   color: ${props => props.theme.colors.primary};
   margin-bottom: 1rem;
-  font-family: Solevate;
+  font-family: Tangerine;
 `;
 
 export {

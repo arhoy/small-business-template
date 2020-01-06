@@ -74,17 +74,6 @@ const HeroContent = styled.div`
   border-bottom-right-radius: 2rem;
 `;
 
-const CustomH1 = styled(H1)`
-  text-align: center;
-  color: ${props => props.theme.colors.white};
-  text-shadow: -3px 3px 0 ${props => props.theme.colors.black};
-  padding: 0.75rem 1rem;
-  background: ${props => props.theme.colors.blackTransparent};
-  & span {
-    display: block;
-  }
-`;
-
 export const query = graphql`
   {
     heroImage: file(relativePath: { eq: "hero.jpg" }) {
@@ -133,11 +122,7 @@ const Home = ({ data }) => {
           <HerosContainer>
             <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
               <HeroContentContainer>
-                <HeroContent>
-                  <CustomH1>
-                    <span>Hello</span>
-                  </CustomH1>
-                </HeroContent>
+                <HeroContent></HeroContent>
               </HeroContentContainer>
             </HeroBackgroundImage>
           </HerosContainer>
