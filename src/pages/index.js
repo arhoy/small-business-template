@@ -12,7 +12,6 @@ import {
   Section,
   SectionGrey,
 } from '../components/reusableStyles/sections/Sections';
-import { H1 } from '../components/reusableStyles/typography/Typography';
 
 import AboutUs from '../components/home/AboutUs';
 import AboutOurFood from '../components/home/AboutOurFood';
@@ -74,17 +73,6 @@ const HeroContent = styled.div`
   border-bottom-right-radius: 2rem;
 `;
 
-const CustomH1 = styled(H1)`
-  text-align: center;
-  color: ${props => props.theme.colors.white};
-  text-shadow: -3px 3px 0 ${props => props.theme.colors.black};
-  padding: 0.75rem 1rem;
-  background: ${props => props.theme.colors.blackTransparent};
-  & span {
-    display: block;
-  }
-`;
-
 export const query = graphql`
   {
     heroImage: file(relativePath: { eq: "hero.jpg" }) {
@@ -133,12 +121,7 @@ const Home = ({ data }) => {
           <HerosContainer>
             <HeroBackgroundImage fluid={data.heroImage.childImageSharp.fluid}>
               <HeroContentContainer>
-                <HeroContent>
-                  <CustomH1>
-                    <span>Welcome To</span>
-                    <span>Food Invite Cameroon</span>
-                  </CustomH1>
-                </HeroContent>
+                <HeroContent></HeroContent>
               </HeroContentContainer>
             </HeroBackgroundImage>
           </HerosContainer>

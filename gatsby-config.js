@@ -45,7 +45,7 @@ module.exports = {
           `Merienda\:300,500,700`,
           `Sacramento`,
           `Montserrat`,
-          `Josefin Sans\:700`,
+          `Parisienne`,
         ],
         display: 'swap',
       },

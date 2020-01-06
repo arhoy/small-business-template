@@ -48,7 +48,8 @@ const CustomPHome = styled(PBasic)`
 const CustomH2 = styled(H2)`
   color: ${props => props.theme.colors.primary};
   margin-bottom: 1rem;
-  font-family: Josefin Sans;
+  font-family: Parisienne;
+  font-size: 4rem;
 `;
 
 export {
