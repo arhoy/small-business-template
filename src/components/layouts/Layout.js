@@ -99,7 +99,6 @@ const FullFooterLayout = styled.footer`
 
 const Layout = ({ children, full }) => {
   const bodyColor = '#EAEDED';
-  const primaryColor = 'rgb(92, 52, 145)';
 
   return (
     <>
@@ -114,11 +113,6 @@ const Layout = ({ children, full }) => {
             background: ${bodyColor};
             margin: 0;
             font-family: Merienda, Cursive, Helvetica, Arial, sans-serif;
-          }
-
-          h1 {
-            color: ${primaryColor};
-            font-family: Merienda;
           }
         `}
       />
