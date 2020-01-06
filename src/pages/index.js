@@ -135,8 +135,7 @@ const Home = ({ data }) => {
               <HeroContentContainer>
                 <HeroContent>
                   <CustomH1>
-                    <span>Welcome To</span>
-                    <span>Food Invite Cameroon</span>
+                    <span>Hello</span>
                   </CustomH1>
                 </HeroContent>
               </HeroContentContainer>

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Image from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
 import { PBasic, H2 } from '../reusableStyles/typography/Typography';
 
 const Container = styled.div`
@@ -21,10 +22,19 @@ const ImageContainerSlider = styled.div`
   max-width: 50rem;
 `;
 
+const CustomBackgroundImage = styled(BackgroundImage)`
+  max-width: 45rem;
+  height: 30rem;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 1 !important;
+`;
+
 const BlurbContainer = styled.div``;
 
 const StyledImage = styled(Image)`
-  min-width: 35rem;
   max-width: 45rem;
   object-fit: cover;
   margin: 0 auto;
@@ -48,7 +58,7 @@ const CustomPHome = styled(PBasic)`
 const CustomH2 = styled(H2)`
   color: ${props => props.theme.colors.primary};
   margin-bottom: 1rem;
-  font-family: Josefin Sans;
+  font-family: Solevate;
 `;
 
 export {
@@ -60,4 +70,5 @@ export {
   CustomP,
   CustomH2,
   CustomPHome,
+  CustomBackgroundImage,
 };
