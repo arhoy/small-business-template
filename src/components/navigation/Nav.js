@@ -122,6 +122,7 @@ const NavSuperStore1 = () => {
         <NavContainer>
           <CustomLink to="/">Home </CustomLink>
           <CustomLink to="/recipes">Recipes </CustomLink>
+          <CustomLink to="/delivery">Delivery </CustomLink>
 
           {/* <MyMenu3 color={'white'} title={`Recipes`}>
             <Container1200>

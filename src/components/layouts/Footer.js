@@ -168,6 +168,7 @@ const Footer = () => {
               <LinkHeaders>Can't Find Your Dish?</LinkHeaders>
               <CustomLinks to="/contact">Tell Us Which One</CustomLinks>
               <CustomLinks to="/contact">Report an issue</CustomLinks>
+              <CustomLinks to="/disclaimer">Disclaimer</CustomLinks>
             </LinkContainers>
           </LinkColumnContainers>
         </MenuRHS>
