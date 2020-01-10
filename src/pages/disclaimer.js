@@ -26,11 +26,11 @@ const DeliveryPage = () => {
             <CustomP>Our Disclaimer...</CustomP>
             <CustomPHome>
               Our food contains a handful of different nuts and other herbs that
-              may be foreign to you. Please be adviced,do not consume if you are
-              prone to allergies of any form. Contact. However, we are GLUTEN
-              FREE. Again reach out to us! And if you are more tolerant health
-              wise and are a FOODIE, We ask that you are a lot patient with your
-              First TRY. Come Again. Remember, TASTE IS CULTIVATED!
+              may be foreign to you and your taste bud. Please be adviced and do
+              not consume if you are prone to allergies of any form. And if you
+              are more tolerant health wise and are a FOODIE, We ask that you
+              are a lot patient with your First TRY. Remember, TASTE IS
+              CULTIVATED!
             </CustomPHome>
 
             <ButtonStyle2>

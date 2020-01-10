@@ -28,21 +28,19 @@ const DeliveryPage = () => {
             <CustomP>Our Food...</CustomP>
             <CustomPHome>
               Our food comes in a zip lock foil bag, BPA approved silver back
-              clear front...lick proof, smell proof and it's reusable. Free
-              delivery on all catering orders within Edmonton. Free delivery to
-              North Locations on orders $50 and over. Deliveries on other parts
-              of Edmonton...$10
+              clear front...lick proof, smell proof and it's reusable.
+              <br />
+              <br />
+              Free delivery on all catering orders within Edmonton.
+              <br />
+              Free delivery to North Locations on orders $50 and over.
+              <br />
+              Deliveries on other parts of Edmonton...$10
             </CustomPHome>
+
             <CustomPHome>
-              We season the heck outta our food...here is your {` `}
-              <Bold>FOOD INVITE! LET'S GO!</Bold>
-            </CustomPHome>
-            <CustomPHome>
-              My love for cooking comes from first being a picky eater and
-              wanting to create food that suits my taste bud. To secondly, just
-              loving the traditional gender roles. I love to cater to loved ones
-              around me...it is exuberant! And if you are reading this,
-              <Bold> WELCOME TO THE FOOD INVITE FAMILY!</Bold>
+              We season the heck outta our food...here is your FOOD INVITE!
+              LET'S GO!
             </CustomPHome>
             <ButtonStyle2>
               <NoStyleLink to="/recipes">View Recipes</NoStyleLink>
