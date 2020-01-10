@@ -2,8 +2,6 @@ import React from 'react';
 
 import Layout from '../components/layouts/Layout';
 
-import { Bold } from '../components/reusableStyles/typography/Typography.js';
-
 import {
   Section,
   Container800,

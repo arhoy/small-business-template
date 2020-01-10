@@ -29,28 +29,26 @@ const AboutUs = () => {
   return (
     <Container>
       <BlurbContainer>
-        <CustomH2>About Us</CustomH2>
+        <CustomH2>About Me</CustomH2>
         <CustomP>My Roots...</CustomP>
         <CustomPHome>
-          Hi, am Claudine Arrey a Cameroonian Canadian based in Edmonton
+          Hi, I am Claudine Arrey a Cameroonian Canadian based in Edmonton
           ALBERTA. I was birthed in West Africa in Cameroon's South West
-          Region-Buea. Am a Daughter, Wife, Mum and <Bold>FOOD INVITE </Bold> is
+          Region-Buea. Am a Daughter, Wife, Mum and <Bold>FOOD INVITE</Bold> is
           my baby!
         </CustomPHome>
         <CustomPHome>
-          FOOD is HOSPITALITY in most African cultures its how we say
-          <Bold> "I LOVE YOU"</Bold>. The phrase, "Parents are Our First
-          Teachers" is not only true of my values and upbringing is how I grew
-          in LOVE with food. My culinary skills are in born and mostly perfected
-          from watching my parents in synergy beam in cookery.
+          FOOD is HOSPITALITY. In most African cultures it is how we say ''I
+          LOVE YOU.'' ''Parents are Our First Teachers" is not only true of my
+          values and upbringing is how I grew in LOVE with food. My culinary
+          skills are in born and mostly perfected from watching my parents in
+          synergy beam in cookery. My love for cooking comes from being a picky
+          eater and wanting to create food that suits my taste bud. Alsoà, just
+          loving the traditional gender roles. I love to cater to loved ones
+          around me...it is exuberant! And if you are reading this,{' '}
+          <Bold>WELCOME TO THE FOOD INVITE FAMILY!</Bold>
         </CustomPHome>
-        <CustomPHome>
-          My love for cooking comes from first being a picky eater and wanting
-          to create food that suits my taste bud. To secondly, just loving the
-          traditional gender roles. I love to cater to loved ones around me...it
-          is exuberant! And if you are reading this, WELCOME TO THE FOOD INVITE
-          FAMILY!
-        </CustomPHome>
+
         <ButtonStyle2>
           <NoStyleLink to="/recipes">View Recipes</NoStyleLink>
         </ButtonStyle2>
