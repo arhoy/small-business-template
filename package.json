@@ -1,7 +1,7 @@
 {
-  "name": "foodinvitecameroon",
+  "name": "smallbusinesstemplate",
   "private": true,
-  "description": "Official repo for foodinvitecameroon.com",
+  "description": "Official repo for template for small site with contentful",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -13,6 +13,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^13.4.0",
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "@mdx-js/mdx": "^1.5.1",
@@ -42,6 +44,7 @@
     "gatsby-plugin-theme-ui": "^0.2.43",
     "gatsby-plugin-twitter": "^2.1.10",
     "gatsby-remark-images": "^3.1.25",
+    "gatsby-source-contentful": "^2.1.76",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-source-instagram": "^0.5.1",
     "gatsby-source-stripe": "^3.0.4",

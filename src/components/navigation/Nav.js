@@ -94,7 +94,7 @@ const LogoImage = styled.img`
 const NavSuperStore1 = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "FoodInviteLogo.png" }) {
+      image: file(relativePath: { eq: "Logo.png" }) {
         sharp: childImageSharp {
           fluid(maxWidth: 600) {
             src
@@ -121,8 +121,7 @@ const NavSuperStore1 = () => {
 
         <NavContainer>
           <CustomLink to="/">Home </CustomLink>
-          <CustomLink to="/recipes">Recipes </CustomLink>
-          <CustomLink to="/delivery">Delivery </CustomLink>
+          <CustomLink to="/contact">Contact </CustomLink>
 
           {/* <MyMenu3 color={'white'} title={`Recipes`}>
             <Container1200>
@@ -133,7 +132,7 @@ const NavSuperStore1 = () => {
           </MyMenu3> */}
 
           <CustomButtonStyle2>
-            <a href="tel:587-920-9921">587-920-9921</a>
+            <a href="tel:587-772-5536">587-772-5536</a>
           </CustomButtonStyle2>
         </NavContainer>
 

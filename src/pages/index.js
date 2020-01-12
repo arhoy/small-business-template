@@ -14,11 +14,13 @@ import {
 } from '../components/reusableStyles/sections/Sections';
 
 import AboutUs from '../components/home/AboutUs';
-import AboutOurFood from '../components/home/AboutOurFood';
+
 import Catering from '../components/home/Catering';
 import Contact from '../components/home/Contact';
 import Slider from 'react-slick';
 import SliderContainer2 from '../components/reusableStyles/slider/SliderContainer2';
+
+import AboutOurFood from '../components/home/AboutOurFood';
 
 const HerosContainer = styled.div`
   z-index: -1;

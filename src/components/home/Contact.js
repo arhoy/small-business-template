@@ -1,62 +1,33 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import styled from '@emotion/styled';
 
-import { Bold } from '../reusableStyles/typography/Typography';
-import {
-  Container,
-  BlurbContainer,
-  CustomH2,
-  CustomP,
-  ImageContainer,
-  StyledImage,
-  CustomPHome,
-} from './HomeStyling';
+import { HomeSection } from './Section/ContentfulSection';
 
-const CustomContainer = styled(Container)`
-  @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-`;
-
-const Contact = () => {
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "recipes/plantains2.jpg" }) {
-        sharp: childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_withWebp
+const AboutOurFood = () => {
+  const contentfulData = useStaticQuery(graphql`
+    {
+      contentfulSectionSimple(
+        id: { eq: "eb1bc4ea-7880-5d4d-8196-74b189170199" }
+      ) {
+        id
+        title
+        columnReverse
+        subtitle {
+          subtitle
+        }
+        pictures {
+          fluid(maxWidth: 500) {
+            ...GatsbyContentfulFluid_withWebp
           }
+        }
+        description {
+          json
         }
       }
     }
   `);
-  return (
-    <CustomContainer>
-      <ImageContainer>
-        <StyledImage fluid={image.sharp.fluid} fadeIn={true} />
-      </ImageContainer>
-      <BlurbContainer>
-        <CustomH2>Contact</CustomH2>
-        <CustomP>We would love to hear from you</CustomP>
-        <CustomPHome>
-          We can be reached via email <Bold>claudinearrey@gmail.com.</Bold>
-        </CustomPHome>
-        <CustomPHome>
-          For a quicker response text or call <Bold>(587) 920 9921 </Bold>
-        </CustomPHome>
-        <CustomPHome>
-          This being a passion we are excited to share to you all, comes with
-          its own limitations apparently. We apologise ahead. We are however
-          available to cater three days a week Thursday, Friday and Saturdays.
-          Orders must be placed a week prior to your event date. There are
-          however a handful of West African Traditional dishes we can cater to
-          not outlined here. Hit us up and LETS SERVE YOUR IMAGINATION!
-        </CustomPHome>
-      </BlurbContainer>
-    </CustomContainer>
-  );
+
+  return <HomeSection data={contentfulData.contentfulSectionSimple} />;
 };
 
-export default Contact;
+export default AboutOurFood;

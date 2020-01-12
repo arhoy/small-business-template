@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import socialIcons from '../../constants/socialIcons';
 import NoStyleLink from '../Links/NoStyleLink';
 import { NetlifyFormV2 } from '../forms/NetlifyFormV2';
-import recipeData from '../../../apis/recipeData';
+import footerLinks from '../../../apis/footerLinks';
 
 const d = new Date().getFullYear();
 
@@ -125,15 +125,19 @@ const Footer = () => {
             <LinkContainers>
               <LinkHeaders>Text Or Call</LinkHeaders>
               <LinkHeadersPrimary style={{ marginBottom: '-0.5rem' }}>
-                587-920-9921
+                587-772-5536
               </LinkHeadersPrimary>
             </LinkContainers>
             <LinkContainers>
               <LinkHeaders>Recipes </LinkHeaders>
-              {recipeData &&
-                recipeData.map((recipe, i) => (
-                  <CustomLinks key={i} to={`/recipes/${recipe.slug}`}>
-                    {recipe.title}
+              {footerLinks &&
+                footerLinks.map((link, i) => (
+                  <CustomLinks key={i} to={`/${link.slug}`}>
+                    {link.title}
+                    {/* <img
+                      src={link.image}
+                      style={{ width: '4rem', height: '4rem' }}
+                    /> */}
                   </CustomLinks>
                 ))}
             </LinkContainers>
@@ -162,13 +166,13 @@ const Footer = () => {
           <LinkColumnContainers>
             <LinkContainers>
               <LinkHeaders>Email Us</LinkHeaders>
-              <LinkDescription>claudinearrey@gmail.com</LinkDescription>
+              <LinkDescription>aquasar2020@gmail.com</LinkDescription>
             </LinkContainers>
             <LinkContainers>
               <LinkHeaders>Can't Find Your Dish?</LinkHeaders>
               <CustomLinks to="/contact">Tell Us Which One</CustomLinks>
               <CustomLinks to="/contact">Report an issue</CustomLinks>
-              <CustomLinks to="/disclaimer">Disclaimer</CustomLinks>
+              <CustomLinks to="/privacy-policy">Privacy Policy</CustomLinks>
             </LinkContainers>
           </LinkColumnContainers>
         </MenuRHS>
