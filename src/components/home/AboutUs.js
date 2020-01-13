@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import { HomeSection } from './Section/ContentfulSection';
 
-const AboutOurFood = () => {
+const AboutUs = () => {
   const contentfulData = useStaticQuery(graphql`
     {
       contentfulSectionSimple(
@@ -30,4 +30,4 @@ const AboutOurFood = () => {
   return <HomeSection data={contentfulData.contentfulSectionSimple} />;
 };
 
-export default AboutOurFood;
+export default AboutUs;

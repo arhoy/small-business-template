@@ -1,29 +1,36 @@
-// const path = require('path');
+const path = require('path');
 
-// exports.createPages = async ({ actions, graphql }) => {
-//   const { createPage } = actions;
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions;
 
-//   const { data } = await graphql(`
-//     {
-//       allSimpleSections: allContentfulSectionSimple {
-//         nodes {
-//           id
-//           columnReverse
-//         }
-//       }
-//     }
-//   `);
+  const { data } = await graphql(`
+    {
+      menuItems: allContentfulMenuItems {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
 
-//   // creates pages for Article Content Model
-//   data.allSimpleSections.nodes.forEach(section => {
-//     console.log('section is', section);
-//     createPage({
-//       path: `test/${section.id}`,
-//       component: path.resolve('./src/templates/SectionSimple.js'),
-//       context: {
-//         contentfulId: section.id,
-//         columnReverse: section.columnReverse ? section.columnReverse : false,
-//       },
-//     });
-//   });
-// };
+  // creates pages Menu
+  data.menuItems.nodes.forEach(item => {
+    createPage({
+      path: `menu/${item.slug}`,
+      component: path.resolve('./src/templates/MenuItemTemplate.js'),
+      context: {
+        slug: item.slug,
+      },
+    });
+  });
+  // creates pages for Simple Menu Template for reference
+  data.menuItems.nodes.forEach(item => {
+    createPage({
+      path: `menu-test/${item.slug}`,
+      component: path.resolve('./src/templates/MenuItemSimpleTemplate.js'),
+      context: {
+        slug: item.slug,
+      },
+    });
+  });
+};

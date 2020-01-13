@@ -44,6 +44,11 @@ const H2CenteredLight2 = styled(H2Centered)`
   text-transform: uppercase;
 `;
 
+const Subtitle = styled.h4`
+  font-size: 2.5rem;
+  text-align: center;
+`;
+
 const A = styled.a`
   color: ${props => props.theme.colors.black};
   text-decoration: none;
@@ -82,10 +87,15 @@ const PBasic = styled.p`
   font-size: 1.6rem;
 `;
 
+const BlockQuote = styled.blockquote`
+  color: red;
+`;
+
 export {
   H1,
   H2,
   H2Centered,
+  Subtitle,
   H2CenteredLight1,
   H2CenteredLight2,
   H3,
@@ -98,4 +108,5 @@ export {
   P,
   PBasic,
   ProductPageH1,
+  BlockQuote,
 };

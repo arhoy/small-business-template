@@ -21,7 +21,7 @@ import { Bold, P } from '../../reusableStyles/typography/Typography';
 
 // Image is first column reverse
 const CustomContainerReverse = styled(Container)`
-grid-template-columns: 5fr 4fr;
+grid-template-columns: 4fr 5fr;
   @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
     display: flex;
     flex-direction: column-reverse;
@@ -29,7 +29,7 @@ grid-template-columns: 5fr 4fr;
 `;
 // Blurb is first in regular container
 const CustomContainer = styled(Container)`
-  grid-template-columns: 4fr 5fr;
+  grid-template-columns: 5fr 4fr;
   @media (max-width: ${props => props.theme.screenSize.eightHundred}) {
     display: flex;
     flex-direction: column;
