@@ -17,7 +17,9 @@ export const query = graphql`
   query menuSimpleTemplateQuery($slug: String!) {
     menu: allContentfulMenuItems(filter: { slug: { eq: $slug } }) {
       nodes {
+        slug
         title
+        price
         subtitle {
           subtitle
         }
@@ -40,6 +42,7 @@ const Text = ({ children }) => <P>{children}</P>;
 const MenuItemTemplate = ({ data: { menu } }) => {
   const {
     title,
+
     subtitle: { subtitle },
     description: { json },
     pictures,

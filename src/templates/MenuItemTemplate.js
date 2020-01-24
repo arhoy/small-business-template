@@ -26,6 +26,7 @@ import {
 } from '../components/reusableStyles/sections/Sections';
 import GetAllMenusHook from '../hooks/contentful/products/menu/getAllMenuItemsHook';
 import MenuItemSmall from '../components/menuItemContentful/MenuItemSmall';
+import { SnipCartButton1 } from '../components/reusableStyles/buttons/SnipCartAddToCartButton';
 
 const Container = styled.div`
   display: flex;
@@ -61,6 +62,8 @@ export const query = graphql`
   query menuTemplateQuery($slug: String!) {
     menu: allContentfulMenuItems(filter: { slug: { eq: $slug } }) {
       nodes {
+        slug
+        price
         title
         subtitle {
           subtitle
@@ -87,6 +90,8 @@ const MenuItemTemplate = ({ data: { menu } }) => {
   const myMenuItems = GetAllMenusHook();
   const {
     title,
+    slug,
+    price,
     subtitle: { subtitle },
     description: { json },
     pictures,
@@ -134,6 +139,7 @@ const MenuItemTemplate = ({ data: { menu } }) => {
       [BLOCKS.LIST_ITEM]: (node, children) => <RTFLi>{children}</RTFLi>,
     },
   };
+  console.log('PICTURES', pictures[0].fluid.src);
   return (
     <Layout>
       <Section>
@@ -159,13 +165,24 @@ const MenuItemTemplate = ({ data: { menu } }) => {
           <Container800>
             {documentToReactComponents(json, options)}
           </Container800>
+
+          <SnipCartButton1
+            className={`snipcart-add-item`}
+            data-item-id={slug}
+            data-item-name={title}
+            data-item-image={pictures[0].fluid.src}
+            data-item-price={price}
+            data-item-url={`/menu/${slug}`}
+          >
+            Add to Cart
+          </SnipCartButton1>
         </Container>
       </Section>
       <SectionHexaGrey>
         <H2Centered>More Items</H2Centered>
         <ContainerCenterFlex>
-          {myMenuItems.map(item => (
-            <MenuItemSmall item={item} />
+          {myMenuItems.map((item, i) => (
+            <MenuItemSmall key={i} item={item} />
           ))}
         </ContainerCenterFlex>
       </SectionHexaGrey>
