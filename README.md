@@ -1,1 +1,1 @@
-# Aquasar Cafe
+# SMALL BUSINESS TEMPLATE
